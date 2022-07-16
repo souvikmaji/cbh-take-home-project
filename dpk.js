@@ -8,24 +8,24 @@ exports.deterministicPartitionKey = (event) => {
   }
 
   const MAX_PARTITION_KEY_LENGTH = 256;
-  let candidate;
-
   
   if (event.partitionKey) {
-    candidate = event.partitionKey;
+    let candidate = event.partitionKey;
     if (typeof candidate !== "string") {
       candidate = JSON.stringify(candidate);
     }
-  } else {
-    const data = JSON.stringify(event);
-    candidate = createHash(data);
-  }
-  
-  if (candidate.length > MAX_PARTITION_KEY_LENGTH) {
-    candidate = createHash(candidate);
-  }
 
-  return candidate;
+    if (candidate.length > MAX_PARTITION_KEY_LENGTH) {
+      candidate = createHash(candidate);
+    }
+  
+    return candidate;
+
+  } 
+
+  // Partion key is not present. Simply Create hash and return
+  const data = JSON.stringify(event);
+  return createHash(data);
 };
 
 const createHash = data => {
