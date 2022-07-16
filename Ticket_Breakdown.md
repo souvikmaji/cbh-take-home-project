@@ -16,3 +16,18 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+
+### Ticket 1
+Title:
+Acceptance Criteria:
+Estimation(days): 
+
+### Ticket 2
+Title:
+Acceptance Criteria:
+Estimation(days): 
+
+### Ticket 3
+Title:
+Acceptance Criteria:
+Estimation(days): 
