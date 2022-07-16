@@ -10,7 +10,7 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 ## Your Explanation Here
 
-- While reading the code for the first time, the first thing that I noticed was that there are too many if else conditions present in the code, which is making it hard to understand the code flow. Instead, choose to use early returns wherever possible to simplify the code logic. For example, returning the trivial key early if the event is empty. We can omit the if(event) check because of this. After removing some of the conditional blocks, it was easier to refactor them further. 
+- While reading the code for the first time, the first thing that I noticed was that there are too many if else conditions present in the code, which is making it hard to understand the code flow. Instead, choose to use early returns wherever possible to simplify the code logic. For example, returning the trivial key early if the event is empty. We can omit the if(event) check because of this. After removing some of the conditional blocks, it was easier to refactor them further. Also the overall cyclometric complexity of the code reduced.
 
 - Refactored the flow, into two different flows based on whether the partition key is present or not in the event. That untangles the nested conditions present in the code. Writing tests first gave me the confidence to do this type of logical refactoring. 
 
