@@ -1,8 +1,10 @@
 const crypto = require("crypto");
 
+const TRIVIAL_PARTITION_KEY = "0";
+const MAX_PARTITION_KEY_LENGTH = 256;
+const HASHING_ALGO = "sha3-512";
+
 exports.deterministicPartitionKey = (event) => {
-  const TRIVIAL_PARTITION_KEY = "0";
-  const MAX_PARTITION_KEY_LENGTH = 256;
 
   if (!event) {
     return TRIVIAL_PARTITION_KEY;
@@ -28,5 +30,5 @@ exports.deterministicPartitionKey = (event) => {
 };
 
 const createHash = data => {
-  return crypto.createHash("sha3-512").update(data).digest("hex");
+  return crypto.createHash(HASHING_ALGO).update(data).digest("hex");
 };
